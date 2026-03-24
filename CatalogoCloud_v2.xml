@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo_cloud empresa="TechNova Cloud" 
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:noNamespaceSchemaLocation="CatalogoCloud_v2.xsd">
+    
+    <centro_datos ubicacion="Madrid" zona="eu-sur-1">
+        <servidor id="srv-web-01" rack="A1" estado="activo">
+            <hardware>
+                <cpu nucleos="16" arquitectura="x86_64">Intel Xeon Gold</cpu>
+                <ram unidad="GB">64</ram>
+                <discos>
+                    <disco tipo="NVMe" capacidad_tb="2" principal="true" />
+                    <disco tipo="SSD" capacidad_tb="4" principal="false" />
+                </discos>
+            </hardware>
+            <software>
+                <so version="22.04">Ubuntu Server</so>
+                <servicios>
+                    <servicio puerto="80">Nginx HTTP</servicio>
+                </servicios>
+            </software>
+            <red>
+                <ip_fija>192.168.1.10</ip_fija>
+            </red>
+            <auditoria>
+                <tecnico>Admin01</tecnico>
+                <fecha_revision>2026-03-20</fecha_revision>
+                <nota>Rendimiento óptimo.</nota>
+            </auditoria>
+        </servidor>
+    </centro_datos>
+    
+    <centro_datos ubicacion="Paris" zona="eu-centro-1">
+        <servidor id="srv-ia-01" rack="B1" estado="activo">
+            <hardware>
+                <cpu nucleos="32" arquitectura="x86_64">AMD EPYC</cpu>
+                <ram unidad="GB">128</ram>
+                <gpu modelo="NVIDIA A100" vram_gb="80">Tensor Core</gpu>
+                <discos>
+                    <disco tipo="NVMe" capacidad_tb="4" principal="true" />
+                </discos>
+            </hardware>
+            <software>
+                <so version="22.04">Ubuntu Server</so>
+                <servicios>
+                    <servicio puerto="8888">Jupyter Hub</servicio>
+                </servicios>
+            </software>
+            <red>
+                <dhcp>si</dhcp>
+            </red>
+            <auditoria>
+                <fecha_revision>2026-03-24</fecha_revision>
+                <nota>GPU testeada.</nota>
+                <tecnico>AI_Expert</tecnico>
+            </auditoria>
+        </servidor>
+    </centro_datos>
+</catalogo_cloud>
